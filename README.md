@@ -1,12 +1,45 @@
-[lookupfile][1] : file search(F2)
++ [lookupfile][1] : file search(F2)
 
-nerdtree: file directory(F6)
+In the .vimrc config, you can see the lookupfile config right below
+```
 
-syntax highlight 
+""""""""""""""""""""""""""""""
+" lookupfile setting
+""""""""""""""""""""""""""""""
+let g:LookupFile_MinPatLength = 2               "最少输入2个字符才开始查找
+let g:LookupFile_PreserveLastPattern = 0        "不保存上次查找的字符串
+let g:LookupFile_PreservePatternHistory = 1     "保存查找历史
+let g:LookupFile_AlwaysAcceptFirst = 1          "回车打开第一个匹配项目
+let g:LookupFile_AllowNewFiles = 0              "不允许创建不存在的文件
+if filereadable("./filenametags")                "设置tag文件的名字
+let g:LookupFile_TagExpr = '"./filenametags"'
+endif
+"映射LookupFile为,lk
+nmap <silent> <leader>lk :LUTags<cr>
+"映射LUBufs为,ll
+nmap <silent> <leader>ll :LUBufs<cr>
+"映射LUWalk为,lw
+nmap <silent> <leader>lw :LUWalk<cr>
 
-perl support and bash support
+```
 
-java  python lisp scheme and so one
+it requires you to create the filenametags in the current project directory,
+so you can use the code below in the shell bash or cygwin(windows),which will create the filenametags in your current directory .
+
+```
+#!/bin/sh# generate tag file for lookupfile pluginecho -e "!_TAG_FILE_SORTED\t2\t/2=foldcase/" > filenametagsfind . -not -regex '.*\.\(png\|gif\)' -type f -printf "%f\t%p\t1\n" | \    sort -f >> filenametags 
+
+```
+
++ nerdtree: file directory(F6)
+
++ syntax highlight ,with beautiful theme(vividchalk).
+
++ [perl support][4] and [bash support][5]
+
++ java  python lisp scheme and so one
+
+
 
 
 ## windows install
@@ -51,3 +84,5 @@ ssh -T git@github.com  # test your push operation with git
 [1]:http://easwy.com/blog/archives/advanced-vim-skills-lookupfile-plugin/ 
 [2]:https://git-scm.com/ 
 [3]:http://www.vim.org/download.php 
+[4]:https://github.com/vim-scripts/perl-support.vim 
+[5]:https://github.com/vim-scripts/bash-support.vim 
