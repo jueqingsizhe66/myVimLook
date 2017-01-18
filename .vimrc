@@ -280,7 +280,7 @@ endif
 " 2014-5-4x xintianjia 
 
 if has("cscope")
-   set csprg="E:\Program Files (x86)\Vim\vim74\cscope"              "指定用来执行 cscope 的命令
+   set csprg="~\.vim\cscope.exe"              "指定用来执行 cscope 的命令
    set csto=1                             "先搜索tags标签文件，再搜索cscope数据库
    set cst                                "使用|:cstag|(:cs find g)，而不是缺省的:tag
    set nocsverb                           "不显示添加数据库是否成功

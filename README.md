@@ -1,3 +1,5 @@
+## some useful functions 
+
 + [lookupfile][1] : file search(F2)
 
 In the .vimrc config, you can see the lookupfile config right below
@@ -31,13 +33,13 @@ so you can use the code below in the shell bash or cygwin(windows),which will cr
 
 ```
 
-+ nerdtree: file directory(F6)
++ nerdtree: file directory(F6) 
 
 + syntax highlight ,with beautiful theme(vividchalk).
 
 + [perl support][4] and [bash support][5]
 
-+ java  python lisp scheme and so one
++ Code completion for java  python lisp scheme and so on 
 
 
 
@@ -54,7 +56,12 @@ so you can use the code below in the shell bash or cygwin(windows),which will cr
 
 5. copy the .vimrc to the vim install place, such as `D:\Program Files (x86)\Vim`
 
-6. maybe you need to check the cscope.exe and ctags.exe (you can use the cygwin instead.)
+6. maybe you need to check the cscope.exe and [ctags.exe][6] (you can use the cygwin instead.)
+  Now I have put the cscope.exe and ctags.exe in the .vim folder, and don't move the cscope.exe.
+  You can move the ctags.exe in the gVim.exe folder or you can put it in the cygwin folder(Note cygwin/bin is in your path, also
+  you can use cygwin to install cscope.exe).
+  (Usage of ctags: ctags -R .) 
+  To deep in the understanding of the cscope, chech the [cscope's usage][7].
 
 
 ## ubuntu install
@@ -78,7 +85,12 @@ ssh -T git@github.com  # test your push operation with git
 
 5. copy the .vimrc to the vim install place, such as ~/
 
-6. maybe you need to check the cscope.exe and ctags.exe (you can use the cygwin instead.)
+6. maybe you need to check the cscop and ctags (you can use the cygwin instead.)
+
+```
+apt-get install ctags
+apt-get install cscope
+```
 
 
 [1]:http://easwy.com/blog/archives/advanced-vim-skills-lookupfile-plugin/ 
@@ -86,3 +98,5 @@ ssh -T git@github.com  # test your push operation with git
 [3]:http://www.vim.org/download.php 
 [4]:https://github.com/vim-scripts/perl-support.vim 
 [5]:https://github.com/vim-scripts/bash-support.vim 
+[6]:https://sourceforge.net/projects/ctags/?source=directory 
+[7]:http://blog.csdn.net/dengxiayehu/article/details/6330200 
